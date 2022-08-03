@@ -13,7 +13,7 @@ import static service.Login.scanner;
 public class AccessArticle {
     static Login login = new Login();
     Main_menu main_menu;
-//Add article
+
     public void addArticle() throws SQLException {
         System.out.println("ٍenter title");
         String title = scanner.next();
@@ -31,7 +31,7 @@ public class AccessArticle {
         articleRepo.insert(article);
 
     }
-//Editing the article
+
     public static void editArticle() throws SQLException {
         User user = userRepo.findByusername(login.uss);
         int i1 = user.getId();
@@ -60,7 +60,6 @@ public class AccessArticle {
         }
 
     }
-    //Show article
     public void ShowArticle() throws SQLException {
         List<Article> articles = articleRepo.findByispublished(true);
         articles.forEach(System.out::println);
